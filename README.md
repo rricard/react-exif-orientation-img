@@ -12,8 +12,6 @@ npm install --save react-exif-orientation-img
 yarn add react-exif-orientation-img
 ```
 
-We do not bundle the source for now. If you are using Create React App or a similar Babel preset, everything should work as expected.
-
 ## Usage
 
 Instead of using an `img` element, use this component instead:
