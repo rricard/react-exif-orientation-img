@@ -30,7 +30,7 @@
       function mountImage(type, number) {
         ReactDOM.render(
           React.createElement(ReactExifImg, {
-            src: '/examples/' + type + '_' + number + '.jpg',
+            src: 'https://raw.githubusercontent.com/recurser/exif-orientation-examples/master/' + type + '_' + number + '.jpg',
             alt: type + ' ' + number,
           }, null),
           document.getElementById(type + '_' + number)
