@@ -10,6 +10,11 @@ const snakeToCamelCaseKeys = (obj: Object): Object =>
     }))
     .reduce((a, b) => ({...a, ...b}), {});
 
+const setupWH = (orientation: ?number, width: number, height: number) =>
+  (orientation || 0) > 4 ?
+    {width: height, height: width} :
+    {width, height};
+
 class ExifOrientationImg extends Component {
   props: Object;
   state: {
@@ -18,15 +23,24 @@ class ExifOrientationImg extends Component {
     orientation: null,
   };
 
-  _onImageLoaded(imageElement: HTMLImageElement) {
+  _onImageLoaded(...args: any[]) {
+    const [event, ...otherArgs] = args;
+    const imageElement: HTMLImageElement = event.target;
+    const { onLoad } = this.props;
+
     // Fix for an issue affecting exif-js: see https://github.com/exif-js/exif-js/issues/95
     const windowImage = window.Image
     window.Image = null;
     
     // Do the actual EXIF operations
-    EXIF.getData(imageElement, () => {
-      this.setState({ orientation: EXIF.getTag(imageElement, 'Orientation') })
-    });
+    if (!EXIF.getData(imageElement, () => {
+      this.setState({
+        orientation: EXIF.getTag(imageElement, 'Orientation'),
+      });
+      onLoad && onLoad(event, ...otherArgs);
+    })) {
+      onLoad && onLoad(event, ...otherArgs);
+    }
 
     // Re-establish the reference
     window.Image = windowImage;
@@ -36,7 +50,10 @@ class ExifOrientationImg extends Component {
     const {
       src,
       alt,
-      style,
+      style = {},
+      width,
+      height,
+      onLoad,
       ...imgProps,
     } = this.props;
     const {
@@ -45,7 +62,7 @@ class ExifOrientationImg extends Component {
 
     return (
       <img
-        onLoad={e => this._onImageLoaded(e.target)}
+        onLoad={this._onImageLoaded.bind(this)}
         src={src}
         alt={alt}
         style={{
@@ -54,8 +71,10 @@ class ExifOrientationImg extends Component {
               snakeToCamelCaseKeys(exif2css(orientation)) :
               {}
           ),
+          ...setupWH(orientation, style.width, style.height),
           ...style,
         }}
+        {...setupWH(orientation, width, height)}
         {...imgProps}
       />
     );
