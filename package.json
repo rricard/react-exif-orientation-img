@@ -1,6 +1,6 @@
 {
   "name": "react-exif-orientation-img",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "img element wrapper component for React that understands EXIF orientation information and corrects it using CSS transforms.",
   "keywords": [
     "react",
@@ -30,7 +30,7 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "flow-bin": "^0.50.0",
