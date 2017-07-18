@@ -1,6 +1,20 @@
 /* @flow */
-import React from 'react';
+import React, { Component } from 'react';
 
-const ExifImg = () => <img alt="whoops" />;
+class ExifOrientationImg extends Component {
+  props: Object;
 
-export default ExifImg;
+  render() {
+    const {
+      src,
+      alt,
+      ...imgProps,
+    } = this.props;
+
+    return (
+      <img src={src} alt={alt} {...imgProps} />
+    );
+  }
+}
+
+export default ExifOrientationImg;
