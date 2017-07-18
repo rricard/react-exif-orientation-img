@@ -8,16 +8,41 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div id="Landscape_1"></div>
+    <div id="Landscape_2"></div>
+    <div id="Landscape_3"></div>
+    <div id="Landscape_4"></div>
+    <div id="Landscape_5"></div>
+    <div id="Landscape_6"></div>
+    <div id="Landscape_7"></div>
+    <div id="Landscape_8"></div>
+    <div id="Portrait_1"></div>
+    <div id="Portrait_2"></div>
+    <div id="Portrait_3"></div>
+    <div id="Portrait_4"></div>
+    <div id="Portrait_5"></div>
+    <div id="Portrait_6"></div>
+    <div id="Portrait_7"></div>
+    <div id="Portrait_8"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
     <script type="text/javascript">
-      window.onload = function () {
+      function mountImage(type, number) {
         ReactDOM.render(
-          React.createElement(ReactExifImg, {}, null),
-          document.getElementById('root')
+          React.createElement(ReactExifImg, {
+            src: '/examples/' + type + '_' + number + '.jpg',
+            alt: type + ' ' + number,
+          }, null),
+          document.getElementById(type + '_' + number)
         );
       }
+      window.onload = function () {
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+        numbers.forEach(function (i) {
+          mountImage('Landscape', i);
+          mountImage('Portrait', i);
+        });
+      };
     </script>
   </body>
 </html>
