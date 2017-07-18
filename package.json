@@ -2,6 +2,7 @@
   "name": "react-exif-orientation-img",
   "version": "0.1.0",
   "dependencies": {
+    "exif-js": "^2.2.1",
     "react": "^15.6.1",
     "react-scripts": "1.0.10"
   },
