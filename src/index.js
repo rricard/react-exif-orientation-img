@@ -1,6 +1,6 @@
 /* @flow */
-import ExifImg from './ExifImg';
+import ExifOrientationImg from './ExifOrientationImg';
 
-export default ExifImg;
+export default ExifOrientationImg;
 
-window.ReactExifImg = ExifImg;
+window.ReactExifImg = ExifOrientationImg;

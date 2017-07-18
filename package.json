@@ -1,7 +1,6 @@
 {
-  "name": "react-exif-img",
+  "name": "react-exif-orientation-img",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "react": "^15.6.1",
     "react-scripts": "1.0.10"
