@@ -1,10 +1,13 @@
 const path = require('path');
 
+const BUILD_DIR = path.resolve(__dirname, 'build');
+const PUBLIC_DIR = path.resolve(__dirname, 'public');
+
 module.exports = {
   entry: './src/example.js',
   output: {
     filename: 'example.js',
-    path: path.resolve(__dirname, 'build'),
+    path: BUILD_DIR,
   },
   module: {
     rules: [
@@ -21,4 +24,8 @@ module.exports = {
     ],
   },
   devtool: 'cheap-source-map',
+  devServer: {
+    contentBase: [BUILD_DIR, PUBLIC_DIR],
+    inline: true,
+  },
 };

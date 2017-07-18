@@ -31,7 +31,10 @@ const MyComponent = () =>
 
 All properties will be cleanly passed to the img element including `style` and `onLoad` that this component uses under the hood. However, **keep in mind that you should be aware that width/height and other dimension manipulations may not work as expected**.
 
-## Roadmap
+## Development
 
-- Add a container system to wrap correctly the image dimensions
-- Package this library using a manual webpack configuration
+yarn is preferred to work with this project.
+
+### Dev server
+
+Just start a server with `yarn start`.

@@ -36,11 +36,12 @@
     "flow-bin": "^0.50.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "^3.3.0"
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
   },
   "scripts": {
     "build": "babel src --out-dir lib --source-maps",
-    "build-example": "webpack",
+    "start": "webpack-dev-server",
     "prepublish": "npm run build"
   }
 }
