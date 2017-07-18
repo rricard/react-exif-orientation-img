@@ -1,6 +1,6 @@
 {
   "name": "react-exif-orientation-img",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "img element wrapper component for React that understands EXIF orientation information and corrects it using CSS transforms.",
   "keywords": [
     "react",
