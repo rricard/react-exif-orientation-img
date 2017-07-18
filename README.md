@@ -2,6 +2,8 @@
 
 `img` element wrapper component for React that understands EXIF orientation information and corrects it using CSS transforms.
 
+![Example](./public/example.png)
+
 ## Installation
 
 ```sh
