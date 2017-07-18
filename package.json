@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "exif-js": "^2.2.1",
+    "exif2css": "^1.2.0",
     "react": "^15.6.1",
     "react-scripts": "1.0.10"
   },
