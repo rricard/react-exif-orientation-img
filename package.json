@@ -9,6 +9,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "typecheck": "flow check",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.50.0"
   }
 }
