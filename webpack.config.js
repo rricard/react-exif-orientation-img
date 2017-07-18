@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/example.js',
   output: {
-    filename: 'react-exif-orientation-img.js',
-    path: path.resolve(__dirname, 'lib'),
+    filename: 'example.js',
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -14,10 +14,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['stage-2', 'react'],
+            presets: ['stage-2', 'react']
           },
         },
       },
     ],
   },
+  devtool: 'cheap-source-map',
 };

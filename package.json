@@ -17,7 +17,7 @@
   "contributors": [
     "Robin Ricard"
   ],
-  "main": "./lib/react-exif-orientation-img.js",
+  "main": "./lib/index.js",
   "dependencies": {
     "exif-js": "^2.2.1",
     "exif2css": "^1.2.0"
@@ -27,16 +27,19 @@
     "react-dom": ">=15.0.0 <17.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "flow-bin": "^0.50.0",
     "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "webpack": "^3.3.0"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "babel src --out-dir lib --source-maps",
+    "build-example": "webpack",
     "prepublish": "npm run build"
   }
 }
