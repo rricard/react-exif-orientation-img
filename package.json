@@ -1,6 +1,17 @@
 {
   "name": "react-exif-orientation-img",
   "version": "0.1.0",
+  "description": "img element wrapper component for React that understands EXIF orientation information and corrects it using CSS transforms.",
+  "keywords": ["react", "react-dom", "exif", "orientation", "image"],
+  "homepage": "https://github.com/rricard/react-exif-orientation-img",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rricard/react-exif-orientation-img/issues"
+  },
+  "contributors": [
+    "Robin Ricard"
+  ],
+  "main": "./src/ExifOrientationImg.js",
   "dependencies": {
     "exif-js": "^2.2.1",
     "exif2css": "^1.2.0",
