@@ -10,11 +10,6 @@ const snakeToCamelCaseKeys = (obj: Object): Object =>
     }))
     .reduce((a, b) => ({...a, ...b}), {});
 
-const setupWH = (orientation: ?number, width: number, height: number) =>
-  (orientation || 0) > 4 ?
-    {width: height, height: width} :
-    {width, height};
-
 class ExifOrientationImg extends Component {
   props: Object;
   state: {
@@ -51,8 +46,6 @@ class ExifOrientationImg extends Component {
       src,
       alt,
       style = {},
-      width,
-      height,
       onLoad,
       ...imgProps,
     } = this.props;
@@ -71,10 +64,8 @@ class ExifOrientationImg extends Component {
               snakeToCamelCaseKeys(exif2css(orientation)) :
               {}
           ),
-          ...setupWH(orientation, style.width, style.height),
           ...style,
         }}
-        {...setupWH(orientation, width, height)}
         {...imgProps}
       />
     );
