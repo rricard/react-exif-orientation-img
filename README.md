@@ -1,3 +1,5 @@
+**NOT MAINTAINED ANYMORE** Please reach out in an issue if you wish to maintain this.
+
 # react-exif-orientation-img
 
 `img` element wrapper component for React that understands EXIF orientation information and corrects it using CSS transforms.
