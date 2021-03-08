@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import EXIF from 'exif-js';
 import exif2css from 'exif2css';
 
-const snakeToCamelCaseKeys = (obj: Object): Object =>
+const kebabToCamelCaseKeys = (obj: Object): Object =>
   Object.keys(obj)
     .map(k => ({
       [k.replace(/(-\w)/g, m => m[1].toUpperCase())]: obj[k],
@@ -61,7 +61,7 @@ class ExifOrientationImg extends Component {
         style={{
           ...(
             orientation ?
-              snakeToCamelCaseKeys(exif2css(orientation)) :
+              kebabToCamelCaseKeys(exif2css(orientation)) :
               {}
           ),
           ...style,
