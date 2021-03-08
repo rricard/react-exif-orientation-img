@@ -37,7 +37,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^3.1.11"
   },
   "scripts": {
     "build": "babel src --out-dir lib --source-maps",
